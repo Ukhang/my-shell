@@ -5,6 +5,7 @@ import { Pwd } from "./commands/Pwd";
 import { Cd } from "./commands/Cd";
 import { Ls } from "./commands/Ls";
 import { Touch } from "./commands/Touch";
+import { Cat } from "./commands/Cat";
 
 export class Executor {
   private builtins: { [key: string]: BuiltinCommand } = {};
@@ -16,6 +17,7 @@ export class Executor {
     this.builtins["cd"] = new Cd();
     this.builtins["ls"] = new Ls();
     this.builtins["touch"] = new Touch();
+    this.builtins["cat"] = new Cat();
   }
 
   async execute(command: string): Promise<void> {
