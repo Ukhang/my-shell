@@ -4,6 +4,7 @@ import { Exit } from "./commands/Exit";
 import { Pwd } from "./commands/Pwd";
 import { Cd } from "./commands/Cd";
 import { Ls } from "./commands/Ls";
+import { Touch } from "./commands/Touch";
 
 export class Executor {
   private builtins: { [key: string]: BuiltinCommand } = {};
@@ -14,6 +15,7 @@ export class Executor {
     this.builtins["pwd"] = new Pwd();
     this.builtins["cd"] = new Cd();
     this.builtins["ls"] = new Ls();
+    this.builtins["touch"] = new Touch();
   }
 
   async execute(command: string): Promise<void> {
