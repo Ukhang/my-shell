@@ -4,7 +4,8 @@
   "description": "This is a custom shell built in TypeScript that mimics a command-line interface.",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "my-shell": "npx ts-node index.ts"
   },
   "keywords": [],
   "author": "",
