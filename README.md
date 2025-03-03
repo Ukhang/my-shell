@@ -2,6 +2,9 @@
 
 This is a custom shell built in TypeScript that mimics a command-line interface. It supports various built-in commands and allows users to navigate and interact with the filesystem efficiently.
 
+## architecture diagram
+![image 1](https://github.com/user-attachments/assets/568448c2-391b-41ee-8edd-fcf7621f0b12)
+
 ## Features
 
 - **exit** - Terminates the shell session.
@@ -17,8 +20,8 @@ This is a custom shell built in TypeScript that mimics a command-line interface.
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/custom-shell.git
-   cd custom-shell
+   git clone https://github.com/Ukhang/my-shell.git
+   cd my-shell
    ```
 2. Install dependencies:
    ```sh
