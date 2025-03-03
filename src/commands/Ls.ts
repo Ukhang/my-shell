@@ -1,15 +1,13 @@
 import { BuiltinCommand } from "./BuiltinCommand";
-import * as fs from "fs";
+import fs from "fs/promises";
 
 export class Ls extends BuiltinCommand {
-  execute(args: string[]) {
-    const path = args[0] || ".";
-    fs.readdir(path, (err, files) => {
-      if (err) {
-        console.error(`Error reading directory: ${err}`);
-        return;
-      }
+  async execute(args: string[]): Promise<void> {
+    try {
+      const files = await fs.readdir(process.cwd());
       console.log(files.join("\n"));
-    });
+    } catch (err) {
+      console.error("Error reading directory:", err);
+    }
   }
 }

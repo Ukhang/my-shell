@@ -15,8 +15,8 @@ export class Shell {
 
   start() {
     this.prompt();
-    this.rl.on("line", (input) => {
-      this.executor.execute(input);
+    this.rl.on("line", async (input) => { 
+      await this.executor.execute(input);
       this.prompt();
     });
 

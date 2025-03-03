@@ -3,6 +3,7 @@ import { Echo } from "./commands/Echo";
 import { Exit } from "./commands/Exit";
 import { Pwd } from "./commands/Pwd";
 import { Cd } from "./commands/Cd";
+import { Ls } from "./commands/Ls";
 
 export class Executor {
   private builtins: { [key: string]: BuiltinCommand } = {};
@@ -12,13 +13,14 @@ export class Executor {
     this.builtins["echo"] = new Echo();
     this.builtins["pwd"] = new Pwd();
     this.builtins["cd"] = new Cd();
+    this.builtins["ls"] = new Ls();
   }
 
-  execute(command: string) {
+  async execute(command: string): Promise<void> {
     const [cmd, ...args] = command.split(" ");
 
     if (cmd in this.builtins) {
-      this.builtins[cmd].execute(args);
+      await this.builtins[cmd].execute(args);
     } else {
       console.log(`Command not found: ${cmd}`);
     }
