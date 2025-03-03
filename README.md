@@ -1,5 +1,5 @@
+![terminal](https://github.com/user-attachments/assets/d57c7985-d734-4c21-9fac-659e656e0e00)
 # My Shell
-
 This is a custom shell built in TypeScript that mimics a command-line interface. It supports various built-in commands and allows users to navigate and interact with the filesystem efficiently.
 
 ## Features
