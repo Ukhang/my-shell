@@ -1,20 +1,32 @@
 import readline from "readline";
+import { Executor } from "./Executor";
 
 export class Shell {
-    private rl: readline.Interface;
+  private executor: Executor;
+  private rl: readline.Interface;
 
-    constructor() {
-        this.rl = readline.createInterface({
-            input: process.stdin,
-            output: process.stdout
-        });
-    }
+  constructor() {
+    this.executor = new Executor();
+    this.rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
+  }
 
-    start() {
-        
-    }
+  start() {
+    this.prompt();
+    this.rl.on("line", (input) => {
+      this.executor.execute(input);
+      this.prompt();
+    });
 
-    private prompt() {
-        process.stdout.write("my-shell$ ");
-    }
+    this.rl.on("close", () => {
+      console.log("\nGoodbye!");
+      process.exit(0);
+    });
+  }
+
+  private prompt() {
+    process.stdout.write("my-shell$ ");
+  }
 }
