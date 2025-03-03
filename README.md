@@ -2,9 +2,6 @@
 
 This is a custom shell built in TypeScript that mimics a command-line interface. It supports various built-in commands and allows users to navigate and interact with the filesystem efficiently.
 
-## architecture diagram
-![image 1](https://github.com/user-attachments/assets/568448c2-391b-41ee-8edd-fcf7621f0b12)
-
 ## Features
 
 - **exit** - Terminates the shell session.
@@ -44,6 +41,9 @@ Changed directory to /home/user
 my-shell$ exit
 Exiting shell...
 ```
+
+## architecture diagram
+![image 1](https://github.com/user-attachments/assets/568448c2-391b-41ee-8edd-fcf7621f0b12)
 
 ## License
 
