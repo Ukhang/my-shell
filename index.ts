@@ -1,4 +1,4 @@
-import { Shell } from "./src/Shell";
+import { Shell } from './src/Shell';
 
 const shell = new Shell();
 shell.start();

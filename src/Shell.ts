@@ -1,5 +1,5 @@
-import readline from "readline";
-import { Executor } from "./Executor";
+import readline from 'readline';
+import { Executor } from './Executor';
 
 export class Shell {
   private executor: Executor;
@@ -15,18 +15,18 @@ export class Shell {
 
   start() {
     this.prompt();
-    this.rl.on("line", async (input) => { 
+    this.rl.on('line', async (input) => {
       await this.executor.execute(input);
       this.prompt();
     });
 
-    this.rl.on("close", () => {
-      console.log("\nGoodbye!");
+    this.rl.on('close', () => {
+      console.log('\nGoodbye!');
       process.exit(0);
     });
   }
 
   private prompt() {
-    process.stdout.write("my-shell$ ");
+    process.stdout.write('my-shell$ ');
   }
 }
