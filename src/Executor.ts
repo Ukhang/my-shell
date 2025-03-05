@@ -10,6 +10,7 @@ import { Clear } from './commands/Clear';
 import { Mkdir } from './commands/Mkdir';
 import { Rmdir } from './commands/Rmdir';
 import { Rm } from './commands/Rm';
+import { Cp } from './commands/Cp';
 
 export class Executor {
   private builtins: { [key: string]: BuiltinCommand } = {};
@@ -26,6 +27,7 @@ export class Executor {
     this.builtins['mkdir'] = new Mkdir();
     this.builtins['rmdir'] = new Rmdir();
     this.builtins['rm'] = new Rm();
+    this.builtins['cp'] = new Cp();
   }
 
   async execute(command: string): Promise<void> {
