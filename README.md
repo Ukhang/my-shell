@@ -15,6 +15,8 @@ This is a custom shell built in TypeScript that mimics a command-line interface.
 ### Navigation & File Management
 - ✅ **mkdir [directory]** - Creates a new directory.
 - ✅ **rmdir [directory]** - Removes an empty directory.
+- ✅ **rm [filename]** - Deletes a file.
+- ✅ **cp [source] [destination]** - Copies a file or directory.
 
 ## Installation
 
