@@ -9,6 +9,7 @@ import { Cat } from './commands/Cat';
 import { Clear } from './commands/Clear';
 import { Mkdir } from './commands/Mkdir';
 import { Rmdir } from './commands/Rmdir';
+import { Rm } from './commands/Rm';
 
 export class Executor {
   private builtins: { [key: string]: BuiltinCommand } = {};
@@ -24,6 +25,7 @@ export class Executor {
     this.builtins['clear'] = new Clear();
     this.builtins['mkdir'] = new Mkdir();
     this.builtins['rmdir'] = new Rmdir();
+    this.builtins['rm'] = new Rm();
   }
 
   async execute(command: string): Promise<void> {
