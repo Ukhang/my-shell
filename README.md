@@ -17,6 +17,10 @@ This is a custom shell built in TypeScript that mimics a command-line interface.
 - ✅ **rmdir [directory]** - Removes an empty directory.
 - ✅ **rm [filename]** - Deletes a file.
 - ✅ **cp [source] [destination]** - Copies a file or directory.
+- ✅ **mv [source] [destination]** - Moves or renames a file or directory.
+### Networking
+- ✅ **ping [host]** - Pings a host to check connectivity.
+- ✅ **curl [URL]** - Fetches content from a URL.
 
 ## Installation
 
