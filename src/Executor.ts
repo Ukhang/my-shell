@@ -11,6 +11,7 @@ import { Mkdir } from './commands/Mkdir';
 import { Rmdir } from './commands/Rmdir';
 import { Rm } from './commands/Rm';
 import { Cp } from './commands/Cp';
+import { Mv } from './commands/Mv';
 
 export class Executor {
   private builtins: { [key: string]: BuiltinCommand } = {};
@@ -28,6 +29,7 @@ export class Executor {
     this.builtins['rmdir'] = new Rmdir();
     this.builtins['rm'] = new Rm();
     this.builtins['cp'] = new Cp();
+    this.builtins['mv'] = new Mv();
   }
 
   async execute(command: string): Promise<void> {
