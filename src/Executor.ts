@@ -12,6 +12,7 @@ import { Rmdir } from './commands/Rmdir';
 import { Rm } from './commands/Rm';
 import { Cp } from './commands/Cp';
 import { Mv } from './commands/Mv';
+import { Ping } from './commands/Ping';
 
 export class Executor {
   private builtins: { [key: string]: BuiltinCommand } = {};
@@ -30,6 +31,7 @@ export class Executor {
     this.builtins['rm'] = new Rm();
     this.builtins['cp'] = new Cp();
     this.builtins['mv'] = new Mv();
+    this.builtins['ping'] = new Ping();
   }
 
   async execute(command: string): Promise<void> {
