@@ -12,7 +12,8 @@ export class Ping extends BuiltinCommand {
     }
 
     const host = args[0];
-    const command = process.platform === 'win32' ? `ping -n 4 ${host}` : `ping -c 4 ${host}`;
+    const command =
+      process.platform === 'win32' ? `ping -n 4 ${host}` : `ping -c 4 ${host}`;
 
     try {
       const { stdout, stderr } = await execPromise(command);

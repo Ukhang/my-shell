@@ -27,7 +27,10 @@ export class Cp extends BuiltinCommand {
     }
   }
 
-  private async copyDirectory(source: string, destination: string): Promise<void> {
+  private async copyDirectory(
+    source: string,
+    destination: string,
+  ): Promise<void> {
     await fs.mkdir(destination, { recursive: true });
     const entries = await fs.readdir(source, { withFileTypes: true });
 

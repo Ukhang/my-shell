@@ -1,12 +1,12 @@
-import { BuiltinCommand } from "./BuiltinCommand";
-import { exec } from "child_process";
-import { promisify } from "util";
+import { BuiltinCommand } from './BuiltinCommand';
+import { exec } from 'child_process';
+import { promisify } from 'util';
 
 const execAsync = promisify(exec);
 
 export class Ps extends BuiltinCommand {
   async execute(): Promise<void> {
-    const command = process.platform === "win32" ? "tasklist" : "ps aux";
+    const command = process.platform === 'win32' ? 'tasklist' : 'ps aux';
 
     try {
       const { stdout, stderr } = await execAsync(command);
