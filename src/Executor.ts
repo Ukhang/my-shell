@@ -16,6 +16,7 @@ import { Ping } from './commands/Ping';
 import { Curl } from './commands/Curl';
 import { Ps } from './commands/Ps';
 import { Kill } from './commands/Kill';
+import { Chmod } from './commands/Chmod';
 
 export class Executor {
   private builtins: { [key: string]: BuiltinCommand } = {};
@@ -38,6 +39,7 @@ export class Executor {
     this.builtins['curl'] = new Curl();
     this.builtins['ps'] = new Ps();
     this.builtins['kill'] = new Kill();
+    this.builtins['chmod'] = new Chmod();
   }
 
   async execute(command: string): Promise<void> {
