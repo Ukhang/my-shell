@@ -17,6 +17,7 @@ import { Curl } from './commands/Curl';
 import { Ps } from './commands/Ps';
 import { Kill } from './commands/Kill';
 import { Chmod } from './commands/Chmod';
+import { Jobs } from './commands/Jobs';
 
 export class Executor {
   private builtins: { [key: string]: BuiltinCommand } = {};
@@ -40,6 +41,7 @@ export class Executor {
     this.builtins['ps'] = new Ps();
     this.builtins['kill'] = new Kill();
     this.builtins['chmod'] = new Chmod();
+    this.builtins["jobs"] = new Jobs();
   }
 
   async execute(command: string): Promise<void> {
