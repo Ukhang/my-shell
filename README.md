@@ -29,6 +29,9 @@ This is a custom shell built in TypeScript that mimics a command-line interface.
 
 - ✅ **ps** - Lists running processes.
 - ✅ **kill [PID]** - Terminates a process.
+- ✅ **jobs** - Lists background jobs.
+- ✅ **fg [job ID]** - Brings a background job to the foreground.
+- ✅ **bg [job ID]** - Resumes a stopped job in the background.
 
 ### Networking
 
@@ -38,6 +41,12 @@ This is a custom shell built in TypeScript that mimics a command-line interface.
 ### Permissions
 
 - ✅ **chmod [permissions] [file]** - Changes file permissions.
+- ✅ **chown [owner] [file]** - Changes file ownership.
+
+### 🖋️ Quoting
+- ✅ **Single Quotes ('')** - Preserves literal value of all characters.
+- ✅ **Double Quotes ("")** - Allows variable expansion (echo "$HOME").
+- ✅ **Backslash () Outside Quotes** - Escapes special characters.
 
 ## Installation
 
