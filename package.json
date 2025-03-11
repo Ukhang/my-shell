@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --write .",
-    "my-shell": "npx ts-node index.ts",
-    "test": "jest"
+    "my-shell": "npx ts-node index.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,10 +19,7 @@
     "typescript": "^5.8.2"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.14",
-    "jest": "^29.7.0",
     "prettier": "^3.5.3",
-    "ts-jest": "^29.2.6",
     "ts-node": "^10.9.2"
   }
 }
