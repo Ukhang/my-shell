@@ -43,7 +43,7 @@ This is a custom shell built in TypeScript that mimics a command-line interface.
 - ✅ **chmod [permissions] [file]** - Changes file permissions.
 - ✅ **chown [owner] [file]** - Changes file ownership.
 
-### 🖋️ Quoting
+### Quoting
 - ✅ **Single Quotes ('')** - Preserves literal value of all characters.
 - ✅ **Double Quotes ("")** - Allows variable expansion (echo "$HOME").
 - ✅ **Backslash () Outside Quotes** - Escapes special characters.
