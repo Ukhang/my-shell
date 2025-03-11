@@ -1,22 +1,22 @@
-import { BuiltinCommand } from './BuiltinCommand';
-import * as fs from 'fs';
+import { BuiltinCommand } from "./BuiltinCommand";
+import { promises as fs } from "fs";
 
 export class Touch extends BuiltinCommand {
-  execute(args: string[]) {
+  async execute(args: string[]): Promise<void> {
     const filename = args[0];
     if (!filename) {
-      console.log('Usage: touch <filename>');
+      console.log("Usage: touch <filename>");
       return;
     }
 
     try {
-      fs.writeFileSync(filename, '', { flag: 'wx' });
+      await fs.writeFile(filename, "", { flag: "wx" });
       console.log(`File ${filename} created`);
-    } catch (err) {
-      if (err instanceof Error) {
-        console.error('Error creating file:', err.message);
+    } catch (err: any) {
+      if (err.code === "EEXIST") {
+        console.error(`Error: File "${filename}" already exists.`);
       } else {
-        console.error('Unknown error occurred while creating the file.');
+        console.error("Error creating file:", err.message);
       }
     }
   }
