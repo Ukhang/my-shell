@@ -36,6 +36,7 @@ This is a custom shell built in TypeScript that mimics a command-line interface.
 - ✅ **curl [URL]** - Fetches content from a URL.
 
 ### Permissions
+
 - ✅ **chmod [permissions] [file]** - Changes file permissions.
 
 ## Installation
