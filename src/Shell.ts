@@ -16,7 +16,7 @@ export class Shell {
   start() {
     this.prompt();
     this.rl.on('line', (input) => {
-      const parsedInput = this.parseQuotes(input);
+      const parsedInput = this.parseInput(input);
       this.executor.execute(parsedInput);
       this.prompt();
     });
@@ -31,12 +31,11 @@ export class Shell {
     process.stdout.write('my-shell$ ');
   }
 
-  // Function to handle both single and double quotes
-  private parseQuotes(input: string): string {
-    input = this.parseSingleQuotes(input);
-
-    input = this.parseDoubleQuotes(input);
-
+  // Function to handle both single quotes, double quotes, and backslashes
+  private parseInput(input: string): string {
+    input = this.parseSingleQuotes(input); // Process single quotes
+    input = this.parseDoubleQuotes(input); // Process double quotes
+    input = this.handleBackslashes(input); // Handle backslashes
     return input;
   }
 
@@ -104,5 +103,26 @@ export class Shell {
     );
 
     return expandedInput;
+  }
+
+  // Function to handle backslashes and escape special characters
+  private handleBackslashes(input: string): string {
+    let result = '';
+    let escapeNext = false;
+
+    for (let i = 0; i < input.length; i++) {
+      const char = input[i];
+
+      if (escapeNext) {
+        result += char;
+        escapeNext = false;
+      } else if (char === '\\') {
+        escapeNext = true;
+      } else {
+        result += char;
+      }
+    }
+
+    return result;
   }
 }
