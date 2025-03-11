@@ -20,6 +20,7 @@ import { Chmod } from './commands/Chmod';
 import { Jobs } from './commands/Jobs';
 import { Fg } from './commands/Fg';
 import { Bg } from './commands/Bg';
+import { Chown } from './commands/Chown';
 
 export class Executor {
   private builtins: { [key: string]: BuiltinCommand } = {};
@@ -46,6 +47,7 @@ export class Executor {
     this.builtins['jobs'] = new Jobs();
     this.builtins['fg'] = new Fg();
     this.builtins['bg'] = new Bg();
+    this.builtins['chown'] = new Chown();
   }
 
   async execute(command: string): Promise<void> {

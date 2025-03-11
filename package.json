@@ -16,7 +16,8 @@
     "fs": "^0.0.1-security",
     "node-fetch": "^3.3.2",
     "readline": "^1.3.0",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "user-info": "^2.0.0"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
